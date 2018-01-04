@@ -14,6 +14,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * Added ngModel from FormsModule to app.module to use two-way binding for Hero name input box in template.
 * Added <input [(ngModel)]> for two-way binding of the  hero.name property.
 
+## Displaying a list
+* Added mock-heroes.ts by exporting a `constant HEROES`
+* Using the constant to initialize a property in heroes.component
+* Using *ngFor displying the list of heroes in heroes.component.html template. Ex: `*ngFor="let hero of heroes"`
+* Displying the master-detail view for heroes.  
+    * Initialize the selectedHero property with `(click)` listener in heroes.component.ts.
+    * Using *ngIf to check whether a hero is selected or not. Ex: `*ngIf="selectedHero"`.
+* Differenciating the selected hero with a different css class using class binding. `[class.selected]="hero === selectedHero"`.
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
