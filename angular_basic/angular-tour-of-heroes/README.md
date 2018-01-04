@@ -6,9 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Hero Editor
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Added Hero component
+* Added Hero class with id and name
+* using the Hero class in template in read-only mode
+* Added ngModel from FormsModule to app.module to use two-way binding for Hero name input box in template.
+* Added <input [(ngModel)]> for two-way binding of the  hero.name property.
 
 ## Build
 
