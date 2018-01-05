@@ -1,0 +1,15 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
+
+<!-- commented to use the routerLink in li-->
+<!-- when the below line is uncommented add following attributes to li and remove 'a' element -->
+<!--  (click)="onSelect(hero)" [class.selected]="hero === selectedHero" -->
+<!--
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+-->
