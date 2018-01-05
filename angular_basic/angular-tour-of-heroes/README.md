@@ -49,6 +49,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Defining Routes
 * Using the RouterModule and Routes, we have defined multiple navigations between the dashboard, heroes list view and hero detail view.
 * ????? Need a bit more detailing ?????
+* HeroService is extended with getHero api which is used by HeroDetailComponent.
+* We can directly use `<a routerLink='defined path in AppRouteModule'>` instead of `(click)` event listener binding `selectedHero` property.
 
 ## Build
 
