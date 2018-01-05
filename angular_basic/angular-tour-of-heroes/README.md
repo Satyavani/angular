@@ -23,6 +23,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
     * Using *ngIf to check whether a hero is selected or not. Ex: `*ngIf="selectedHero"`.
 * Differenciating the selected hero with a different css class using class binding. `[class.selected]="hero === selectedHero"`.
 
+## Seperating Detail view into a new component
+
+* Created a new HeroDetailComponent
+* HeroDetailComponent is responsible for displaying details for a `given/input hero`.
+* To make a property as input use `@Input()` decorator. its available under `@angular/core`.
+* Modifies HeroesComponent template to use `<app-hero-detail>` with `[hero]="selectedHero"`. 
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
