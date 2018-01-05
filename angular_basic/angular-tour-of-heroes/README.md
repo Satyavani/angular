@@ -36,7 +36,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * For interacting with data, we use Service concept. It will be registered using `NgModule.providers array`. It will a singleton object
 * At class level, we have to use `@Injectable()` decorator. This also means, it can also have use some other injectable services.
 * Injectable services can be initialized via constructor of the consumer. The injectable property has to be declared as public if it has to be used by any other template etc.
-    Markup : `constructor(public/private heroService: HeroService)`
+    * `constructor(public/private heroService: HeroService)`
 * Also an important concept of AJAX is asynchronous. When ever we are interacting with server using HTTP, we should ensure that the response is captured in an sync way. 
 * In HeroService, we are using the `Observable and of from RxJS library`. More to come in HTTP angular module.
 * HeroService should fetch data in onNgInit and not in constructor for obvious performance reasons.
@@ -44,6 +44,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## MessageService
 * This is introduce to give some messages in the UI.
 * As the JS is mostly asynchronous, we can use this service to indicate the successful async operation.
+* Using MessageService in HeroService is a perfect example of `service-in-service`. 
+
+## Defining Routes
+* Using the RouterModule and Routes, we have defined multiple navigations between the dashboard, heroes list view and hero detail view.
+* ????? Need a bit more detailing ?????
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
