@@ -56,6 +56,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * HeroService is extended with getHero api which is used by HeroDetailComponent.
 * We can directly use `<a routerLink='route in AppRouteModule'>` instead of `(click)` event listener binding `selectedHero` property.
 
+## HttpClient
+**??????????NEED A BIT READING ABOUT THE SAME ASAP**
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
