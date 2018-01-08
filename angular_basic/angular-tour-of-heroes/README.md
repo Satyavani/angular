@@ -33,9 +33,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## HeroService
 
 * HeroesComponent should only be used for presenting the data. Its not supposed to deal with data fetching like we did using HEROES constant.
-* For interacting with data, we use Service concept. It will be registered using `NgModule.providers array`. It will a singleton object
+* For interacting with data, we use Service concept. It will be registered using `NgModule.providers array`. It will a create singleton object.
 * At class level, we have to use `@Injectable()` decorator. This also means, it can also have use some other injectable services.
-* Injectable services can be initialized via constructor of the consumer. The injectable property has to be declared as public if it has to be used by any other template etc.
+* Injectable services can be initialized via constructor of the consumer. Angular always injects via constructor only. The injectable property has to be declared as public if it has to be used by any other template etc.
     * `constructor(public/private heroService: HeroService)`
 * Also an important concept of AJAX is asynchronous. When ever we are interacting with server using HTTP, we should ensure that the response is captured in an sync way. 
 * In HeroService, we are using the `Observable and of from RxJS library`. More to come in HTTP angular module.
@@ -47,10 +47,17 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * Using MessageService in HeroService is a perfect example of `service-in-service`. 
 
 ## Defining Routes
+* Router designs nav within the landing page client side itself.
 * Using the RouterModule and Routes, we have defined multiple navigations between the dashboard, heroes list view and hero detail view.
+* While navigating between views, we can also pass parameters to path. For ex:
+    * Register a path in Routes something like this `path{'/detail/:id', HeroDetailComponent}`
+    * In the code, you can get the value of passed id using `ActivedRoute` service injected through constructor. `ActivedRoute :: route.snapshot.paramMap.get(id)`
 * ????? Need a bit more detailing ?????
 * HeroService is extended with getHero api which is used by HeroDetailComponent.
-* We can directly use `<a routerLink='defined path in AppRouteModule'>` instead of `(click)` event listener binding `selectedHero` property.
+* We can directly use `<a routerLink='route in AppRouteModule'>` instead of `(click)` event listener binding `selectedHero` property.
+
+## HttpClient
+**??????????NEED A BIT READING ABOUT THE SAME ASAP**
 
 ## Build
 
