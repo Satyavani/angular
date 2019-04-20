@@ -1,4 +1,6 @@
 const path = require('path');
+//TerserPlugin is new way of minifying in 2019. Earlier it was UglifyJsMinify.
+const TerserPlugin = require('terser-webpack-plugin'); 
 
 module.exports = {
     entry: './src/index.js',
@@ -32,8 +34,10 @@ module.exports = {
                         plugins: [ 'transform-class-properties']
                     }
                 }
-
             }
         ]
-    }
+    },
+    plugins: [
+        new TerserPlugin()
+    ]
 };
