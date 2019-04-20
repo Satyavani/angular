@@ -10,7 +10,7 @@ module.exports = {
     output: {
         filename: 'main.[contenthash].js',
         path: path.resolve(__dirname, 'dist'), // specifies where to place dynamically generated files
-        publicPath: 'dist/' // specifies folder under which dynamic generated content like images/css etc files are available
+        publicPath: '' // specifies folder under which dynamic generated content like images/css etc files are available
     },
     mode: 'none',
     module: {
@@ -46,6 +46,8 @@ module.exports = {
             filename: "main.[contenthash].css"
         }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            title: 'Hello world app'
+        })
     ]
 };
