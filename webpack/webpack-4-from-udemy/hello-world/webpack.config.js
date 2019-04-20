@@ -22,6 +22,17 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
+            }, {
+                test: /\.(js)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [ '@babel/env' ], //this helps in converting above ES6 code down to ES5
+                        plugins: [ 'transform-class-properties']
+                    }
+                }
+
             }
         ]
     }
