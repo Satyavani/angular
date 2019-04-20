@@ -1,6 +1,7 @@
 const path = require('path');
-//TerserPlugin is new way of minifying in 2019. Earlier it was UglifyJsMinify.
+//TerserPlugin is new way of 2019 used for minifying JS files. Earlier it was UglifyJsMinify.
 const TerserPlugin = require('terser-webpack-plugin'); 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -20,7 +21,7 @@ module.exports = {
             }, {
                 test: /\.(css|scss)$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ]
@@ -38,6 +39,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new TerserPlugin()
+        new TerserPlugin(),
+        new MiniCssExtractPlugin()
     ]
 };
