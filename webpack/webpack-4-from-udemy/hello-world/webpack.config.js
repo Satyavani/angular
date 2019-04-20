@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'main.js',
+        filename: 'main.[contenthash].js',
         path: path.resolve(__dirname, 'dist'), // specifies where to place dynamically generated files
         publicPath: 'dist/' // specifies folder under which dynamic generated content like images/css etc files are available
     },
@@ -40,6 +40,8 @@ module.exports = {
     },
     plugins: [
         new TerserPlugin(),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin({
+            filename: "main.[contenthash].css"
+        })
     ]
 };
