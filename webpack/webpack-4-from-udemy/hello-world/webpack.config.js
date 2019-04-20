@@ -3,6 +3,7 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin'); 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -44,6 +45,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "main.[contenthash].css"
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin()
     ]
 };
