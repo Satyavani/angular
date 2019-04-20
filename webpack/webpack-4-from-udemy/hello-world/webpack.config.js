@@ -9,11 +9,19 @@ module.exports = {
     },
     mode: 'none',
     module: {
-        rules:[{
-            test: /\.(jpg|png)$/,
-            use: [
-                'file-loader'
-            ]
-        }]
+        rules:[
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    'file-loader'
+                ]
+            }, {
+                test: /\.(css)$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
     }
 };
