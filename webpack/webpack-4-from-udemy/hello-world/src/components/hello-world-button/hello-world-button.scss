@@ -1,0 +1,20 @@
+$hello-world-button-color: black;
+$hello-world-button-font-size: 14;
+$hello-world-button-bg-color: greenyellow;
+
+button {
+    display: block;
+    padding: .5em;
+    margin: .5em;
+    background-color: $hello-world-button-bg-color;
+    font-size: $hello-world-button-font-size;
+    color: $hello-world-button-color;
+}
+
+p {
+    color: $hello-world-button-color;
+    font-size: $hello-world-button-font-size;
+    background-color: $hello-world-button-bg-color;
+    padding: .2em;
+    font-weight: bold;
+}
